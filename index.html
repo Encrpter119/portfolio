@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I'm a BCA student, Frontend Developer, and Freelancer. Explore my portfolio showcasing web development projects and technical expertise.">
+    <meta name="keywords" content="Portfolio, Web Developer, Frontend Developer, BCA, JavaScript, React, Freelancer">
+    <meta name="author" content="M Suhaib">
+    <meta property="og:title" content="M Suhaib - Portfolio">
+    <meta property="og:description" content="BCA Student | Frontend Developer | Freelancer">
+    <meta property="og:image" content="IMAGEPROFILECV1.JPG">
+    
+    <title>M SUHAIB - Portfolio | BCA Student & Frontend Developer</title>
+    
+    <!-- Favicon with border and radius -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><style>.border-circle { fill: none; stroke: %23007AFF; stroke-width: 4; }</style></defs><circle cx='50' cy='50' r='46' class='border-circle'/><circle cx='50' cy='50' r='42' fill='%23007AFF' opacity='0.1'/><text x='50' y='60' font-size='45' font-weight='bold' text-anchor='middle' fill='%23007AFF' font-family='Arial'>MS</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">M Suhaib</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#experience" class="nav-link" data-section="experience">Services</a>
+                <a href="#certificates" class="nav-link" data-section="certificates">Certificates</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- ========================
+             1. HERO SECTION
+             ======================== -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">M Suhaib</span></h1>
+                    
+                    <div class="animated-roles">
+                        <span class="role-text">Student</span>
+                    </div>
+                    
+                    <p class="hero-subtitle">
+                        Passionate BCA student exploring web development, solving problems through code, and building amazing digital experiences.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-briefcase"></i> View Projects
+                        </a>
+                        <a href="CV_MSUHAIB.pdf" download="CV_MSUHAIB.pdf" class="btn btn-secondary" id="resumeBtn">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <img src="IMAGEPROFILECV1.JPG">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- ========================
+             2. ABOUT ME SECTION
+             ======================== -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I'm a passionate BCA (Bachelor of Computer Applications) student with a strong foundation in computer science and programming. My journey in tech is driven by curiosity, consistency, and a relentless desire to learn and innovate.
+                        </p>
+                        
+                        <p>
+                            With hands-on experience in web development, I love transforming ideas into functional, user-friendly digital solutions. I'm particularly interested in frontend development, problem-solving, and staying updated with the latest web technologies.
+                        </p>
+                        
+                        <div class="about-details">
+                            <div class="detail-box">
+                                <h3>Education</h3>
+                                <p><strong>BCA - Bachelor of Computer Applications</strong><br>
+                                Currently pursuing | Passionate learner</p>
+                            </div>
+                            
+                            <div class="detail-box">
+                                <h3>Career Goals</h3>
+                                <p>To become a skilled full-stack developer and create meaningful digital experiences that solve real-world problems.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-values">
+                            <h3>My Values</h3>
+                            <div class="values-grid">
+                                <div class="value-item">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>Innovation</span>
+                                </div>
+                                <div class="value-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Learning</span>
+                                </div>
+                                <div class="value-item">
+                                    <i class="fas fa-check-double"></i>
+                                    <span>Consistency</span>
+                                </div>
+                                <div class="value-item">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Collaboration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <h3 class="stat-number">15+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-number">20+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-number">2+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-number">100%</h3>
+                            <p>Dedication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             3. SKILLS SECTION
+             ======================== -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+                
+                <div class="skills-content">
+                    <!-- Programming Languages -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-code"></i> Programming Languages
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>C</span>
+                                    <span>35%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>C++</span>
+                                    <span>Learning</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>JavaScript</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>Python</span>
+                                    <span>Learning</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Web Technologies -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-globe"></i> Web Technologies
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>HTML5</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>CSS3</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>Bootstrap</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>Responsive Design</span>
+                                    <span>93%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 93%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Frontend Frameworks -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-react"></i> Frontend Frameworks
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>React.js</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>jQuery</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>DOM Manipulation</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools & Platforms -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-tools"></i> Tools & Platforms
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>Git & GitHub</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>VS Code</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-bar">
+                                <div class="skill-header">
+                                    <span>Terminal/CLI</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Other Technical Skills -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-star"></i> Other Technical Skills
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-badge">
+                                <i class="fas fa-database"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="skill-badge">
+                                <i class="fas fa-server"></i>
+                                <span>REST APIs</span>
+                            </div>
+                            <div class="skill-badge">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Mobile Responsive</span>
+                            </div>
+                            <div class="skill-badge">
+                                <i class="fas fa-search"></i>
+                                <span>SEO Optimization</span>
+                            </div>
+                            <div class="skill-badge">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>UI/UX Design</span>
+                            </div>
+                            <div class="skill-badge">
+                                <i class="fas fa-bug"></i>
+                                <span>Debugging</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             4. PROJECTS / WORK SECTION
+             ======================== -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing my best work</p>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="ECOMMERCE.png" alt="E-Commerce Platform">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">
+                                A fully functional e-commerce platform with product listing, shopping cart, and checkout functionality.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-small btn-primary">
+                                    <i class="fas fa-globe"></i> Live Demo
+                                </a>
+                                <a href="#" class="btn btn-small btn-secondary">
+                                    <i class="fas fa-code"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="TODO.png" alt="Todo App">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Todo Task Manager</h3>
+                            <p class="project-description">
+                                A feature-rich todo application with local storage, task filtering, and category management.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">DOM API</span>
+                                <span class="tech-tag">LocalStorage</span>
+                                <span class="tech-tag">CSS3</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-small btn-primary">
+                                    <i class="fas fa-globe"></i> Live Demo
+                                </a>
+                                <a href="#" class="btn btn-small btn-secondary">
+                                    <i class="fas fa-code"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="WEATHER.png" alt="Weather App">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Weather Forecast App</h3>
+                            <p class="project-description">
+                                Real-time weather application using weather APIs with location-based forecasts and beautiful UI.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">REST API</span>
+                                <span class="tech-tag">JSON</span>
+                                <span class="tech-tag">Fetch API</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn btn-small btn-primary">
+                                    <i class="fas fa-globe"></i> Live Demo
+                                </a>
+                                <a href="#" class="btn btn-small btn-secondary">
+                                    <i class="fas fa-code"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             5. EXPERIENCE / SERVICES SECTION
+             ======================== -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2 class="section-title">Services & Experience</h2>
+                <p class="section-subtitle">What I can do for you</p>
+                
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom, responsive websites and web applications built with modern technologies and best practices.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> Responsive Design</span>
+                            <span><i class="fas fa-check"></i> SEO Friendly</span>
+                            <span><i class="fas fa-check"></i> Fast Performance</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <p>Beautiful, interactive user interfaces with smooth animations and intuitive user experiences.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> UI/UX Focus</span>
+                            <span><i class="fas fa-check"></i> Accessibility</span>
+                            <span><i class="fas fa-check"></i> Modern Tech Stack</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paintbrush"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Designing intuitive, visually appealing interfaces that enhance user engagement and satisfaction.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> User Research</span>
+                            <span><i class="fas fa-check"></i> Wireframing</span>
+                            <span><i class="fas fa-check"></i> Prototyping</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Bug Fixing & Optimization</h3>
+                        <p>Identifying and resolving issues, optimizing performance, and improving code quality for existing projects.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> Debugging</span>
+                            <span><i class="fas fa-check"></i> Optimization</span>
+                            <span><i class="fas fa-check"></i> Code Review</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Technical Mentoring</h3>
+                        <p>Guidance on web development concepts, best practices, and project implementation for aspiring developers.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> 1-on-1 Sessions</span>
+                            <span><i class="fas fa-check"></i> Code Reviews</span>
+                            <span><i class="fas fa-check"></i> Personalized Learning</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 6 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Website Maintenance</h3>
+                        <p>Ongoing support, updates, security improvements, and feature additions for your existing websites.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> 24/7 Support</span>
+                            <span><i class="fas fa-check"></i> Security Updates</span>
+                            <span><i class="fas fa-check"></i> Performance Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             7. CERTIFICATES SECTION
+             ======================== -->
+        <section id="certificates" class="certificates">
+            <div class="container">
+                <h2 class="section-title">Professional Certificates</h2>
+                <p class="section-subtitle">Industry-recognized certifications</p>
+                
+                <div class="certificates-grid">
+                    <!-- Certificate 1 - JavaScript Mastery -->
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="CERTIFICATE33.jpg" alt="JavaScript Mastery Certificate">
+                            <div class="certificate-overlay">
+                                <a href="certificate2.jpg" class="certificate-link" target="_blank">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="certificate-title">LOOPIFY - CODING COMPETITION</h3>
+                            <p class="certificate-issuer">Issued by HOD COMPUTER APPLICATIONS , GDC GBL </p>
+                            <p class="certificate-date">Date: SEPTEMBER 2025</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate 2 - React & Frontend Development -->
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="certificate2.jpg" alt="React & Frontend Development Certificate">
+                            <div class="certificate-overlay">
+                                <a href="assets/images/certificatew-2.jpg" class="certificate-link" target="_blank">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="certificate-title">2 Day workshop At GDC GAnderbal</h3>
+                            <p class="certificate-issuer">Issued by HOD-COMPUTER APPLICATIONS, GDC GBL</p>
+                            <p class="certificate-date">Date: April 2025</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate 3 - Web Development Bootcamp -->
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="CERTIFICATE22.jpg" alt="Web Development Bootcamp Certificate">
+                            <div class="certificate-overlay">
+                                <a href="assets/images/certificate-3.jpg" class="certificate-link" target="_blank">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="certificate-title">PYTHON BASICS </h3>
+                            <p class="certificate-issuer">Issued by: TECHVIDVAN</p>
+                            <p class="certificate-date">Date: MAY  2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             8. TOOLS & TECHNOLOGIES
+             ======================== -->
+        <section id="tools" class="tools">
+            <div class="container">
+                <h2 class="section-title">Tools & Technologies</h2>
+                <p class="section-subtitle">My favorite tech stack</p>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML5</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <h4>CSS3</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-js"></i>
+                        <h4>JavaScript</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-react"></i>
+                        <h4>React</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-bootstrap"></i>
+                        <h4>Bootstrap</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-git-alt"></i>
+                        <h4>Git</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-github"></i>
+                        <h4>GitHub</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-code"></i>
+                        <h4>VS Code</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-python"></i>
+                        <h4>Python</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-database"></i>
+                        <h4>MySQL</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fab fa-figma"></i>
+                        <h4>Figma</h4>
+                    </div>
+                    <div class="tool-card">
+                        <i class="fas fa-terminal"></i>
+                        <h4>Terminal</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             9. TESTIMONIALS
+             ======================== -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Testimonials</h2>
+                <p class="section-subtitle">What people say about working with me</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <span class="avatar-text">AK</span>
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Arjun Kumar</h4>
+                                <p>Project Manager</p>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Excellent work on the website project! The developer was professional, delivered on time, and the website is incredibly fast and responsive."
+                        </p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <span class="avatar-text">SP</span>
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Shruti Patel</h4>
+                                <p>Business Owner</p>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Great attention to detail and customer service. My e-commerce platform is now fully functional and user-friendly. Highly recommended!"
+                        </p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <span class="avatar-text">RV</span>
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Rohan Verma</h4>
+                                <p>Tech Entrepreneur</p>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Outstanding web development skills and great communication throughout the project. The attention to design and functionality is remarkable."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             10. BLOG / LEARNING SECTION
+             ======================== -->
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2 class="section-title">Latest Articles</h2>
+                <p class="section-subtitle">Sharing my learning journey</p>
+                
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%23007AFF' width='400' height='250'/%3E%3Ctext x='200' y='125' font-size='20' font-weight='bold' text-anchor='middle' fill='white'%3EJavaScript Tips%3C/text%3E%3C/svg%3E" alt="JavaScript Tips">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Jan 15, 2026</span>
+                                <span class="blog-category">JavaScript</span>
+                            </div>
+                            <h3 class="blog-title">10 JavaScript Tips Every Developer Should Know</h3>
+                            <p class="blog-excerpt">
+                                Discover essential JavaScript techniques and tricks that can improve your code quality and development efficiency.
+                            </p>
+                            <a href="#" class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%2310B981' width='400' height='250'/%3E%3Ctext x='200' y='125' font-size='20' font-weight='bold' text-anchor='middle' fill='white'%3EResponsive Design%3C/text%3E%3C/svg%3E" alt="Responsive Design">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Jan 10, 2026</span>
+                                <span class="blog-category">CSS</span>
+                            </div>
+                            <h3 class="blog-title">Mastering Responsive Web Design in 2026</h3>
+                            <p class="blog-excerpt">
+                                Learn best practices for creating responsive websites that work seamlessly across all devices and screen sizes.
+                            </p>
+                            <a href="#" class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%238B5CF6' width='400' height='250'/%3E%3Ctext x='200' y='125' font-size='20' font-weight='bold' text-anchor='middle' fill='white'%3EReact Best Practices%3C/text%3E%3C/svg%3E" alt="React Best Practices">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Jan 5, 2026</span>
+                                <span class="blog-category">React</span>
+                            </div>
+                            <h3 class="blog-title">React Hooks: Advanced Patterns and Best Practices</h3>
+                            <p class="blog-excerpt">
+                                Explore advanced React hooks patterns to write cleaner, more efficient, and more maintainable React applications.
+                            </p>
+                            <a href="#" class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             11. CONTACT SECTION
+             ======================== -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>
+                                <a href="mailto:yourname@email.com">mail.msuhaib@gmail.com</a>
+                            </p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Phone</h3>
+                            <p>
+                                <a href="tel:+919876543210">+91 7006780939</a>
+                            </p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Location</h3>
+                            <p>Srinagar, India</p>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project inquiry">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required rows="6" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================
+         12. FOOTER
+         ======================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>A passionate BCA student and web developer dedicated to creating beautiful and functional digital experiences.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 M SUHAIB . Allrights reserved.</p>
+                <button class="back-to-top" id="backToTop" aria-label="Back to top">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body> 
+</html>
