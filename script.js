@@ -482,3 +482,46 @@ document.querySelectorAll('a[href^="http"]').forEach(link => {
     link.setAttribute('rel', 'noopener noreferrer');
     link.setAttribute('target', '_blank');
 });
+
+// ====================================
+// 21. PROMO POPUP MODAL
+// ====================================
+
+const promoPopup = document.getElementById('promoPopup');
+const promoPopupClose = document.getElementById('promoPopupClose');
+
+// Show popup after a short delay on page load
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        if (promoPopup) {
+            promoPopup.classList.add('active');
+        }
+    }, 1500);
+});
+
+// Close popup
+const closePromoPopup = () => {
+    if (promoPopup) {
+        promoPopup.classList.remove('active');
+    }
+};
+
+if (promoPopupClose) {
+    promoPopupClose.addEventListener('click', closePromoPopup);
+}
+
+// Close when clicking outside the popup content
+if (promoPopup) {
+    promoPopup.addEventListener('click', (e) => {
+        if (e.target === promoPopup) {
+            closePromoPopup();
+        }
+    });
+}
+
+// Close with Escape key (extends existing keyboard handler)
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && promoPopup && promoPopup.classList.contains('active')) {
+        closePromoPopup();
+    }
+});
