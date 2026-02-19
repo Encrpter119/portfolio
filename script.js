@@ -16,7 +16,7 @@ const getCurrentTheme = () => {
 };
 
 // Initialize theme on page load
-const initTheme = () => {
+const initTheme = () => {a
     const savedTheme = getCurrentTheme();
     if (savedTheme === 'dark-mode') {
         body.classList.add('dark-mode');
