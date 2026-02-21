@@ -93,6 +93,8 @@ body.dark-mode {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -104,6 +106,8 @@ body {
     transition: background-color var(--transition-normal),
         color var(--transition-normal);
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
 }
 
 /* Selection Color */
@@ -285,6 +289,8 @@ button:disabled {
 .navbar {
     position: sticky;
     top: 0;
+    left: 0;
+    width: 100%;
     background-color: var(--nav-bg);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
