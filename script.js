@@ -180,4 +180,71 @@ if (resumeBtn) {
     });
 }
 
+// --- 9. BACK TO TOP BUTTON ---
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// --- 10. CONTACT FORM SUBMISSION WITH DIGITAL EFFECTS ---
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Add digital feature: Transforming button
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Transmitting...';
+        submitBtn.style.opacity = '0.8';
+        submitBtn.style.pointerEvents = 'none';
+        
+        // Simulate network delay
+        setTimeout(() => {
+            // Restore button
+            submitBtn.innerHTML = originalText;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.pointerEvents = 'auto';
+            
+            // Clear form
+            contactForm.reset();
+            
+            // Create and show Toast Popup
+            const toast = document.createElement('div');
+            toast.className = 'toast-popup';
+            toast.innerHTML = `
+                <div class="toast-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="toast-content">
+                    <h4>Message Transmitted!</h4>
+                    <p>I will respond shortly through mail.</p>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // Trigger animation in
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            // Remove after 4 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toast.remove();
+                }, 500);
+            }, 4000);
+            
+        }, 1500); // 1.5 seconds digital delay
+    });
+}
+
 console.log('%c🚀 Premium Portfolio Initialized', 'color: #00f2fe; font-size: 20px; font-weight: bold;');
