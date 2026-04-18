@@ -2,46 +2,43 @@
 // PREMIUM PORTFOLIO - JAVASCRIPT
 // ====================================
 
-// --- 1. THEME TOGGLE (Dark/Light Mode) ---
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
+// --- 1. SUBSCRIBE BUTTON & MODAL ---
+const subscribeBtn = document.getElementById('subscribeBtn');
+const subscribeModal = document.getElementById('subscribeModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
 
-const getCurrentTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    return (savedTheme === 'light' || savedTheme === 'light-mode') ? 'light' : 'dark';
-};
+if (subscribeBtn && subscribeModal && closeModalBtn) {
+    const originalSubscribeText = subscribeBtn.innerHTML;
 
+    subscribeBtn.addEventListener('click', () => {
+        // Show "Generating QR..." effect on button
+        subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating QR...';
+        subscribeBtn.style.pointerEvents = 'none';
+        subscribeBtn.style.opacity = '0.8';
 
-const initTheme = () => {
-    const savedTheme = getCurrentTheme();
-    if (savedTheme === 'light') {
-        body.classList.remove('dark-mode');
-        document.documentElement.setAttribute('data-theme', 'light');
-    } else {
-        body.classList.add('dark-mode');
-        document.documentElement.removeAttribute('data-theme');
-    }
-    updateThemeIcon();
-};
+        // Wait a short delay before opening modal to let user see the effect
+        setTimeout(() => {
+            // Restore button text
+            subscribeBtn.innerHTML = originalSubscribeText;
+            subscribeBtn.style.pointerEvents = 'auto';
+            subscribeBtn.style.opacity = '1';
 
-const updateThemeIcon = () => {
-    if (getCurrentTheme() === 'dark') {
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-};
+            // Show the QR modal
+            subscribeModal.classList.add('active');
+        }, 600); // 600ms = 0.6 seconds, fast enough but readable
+    });
 
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const currentThm = getCurrentTheme();
-        const newTheme = currentThm === 'dark' ? 'light' : 'dark';
+    closeModalBtn.addEventListener('click', () => {
+        subscribeModal.classList.remove('active');
+    });
 
-        localStorage.setItem('theme', newTheme);
-        initTheme();
+    // Close on outside click
+    subscribeModal.addEventListener('click', (e) => {
+        if (e.target === subscribeModal) {
+            subscribeModal.classList.remove('active');
+        }
     });
 }
-initTheme(); // Initialize on load
 
 // --- 2. NAVBAR SCROLL EFFECT & MOBILE MENU ---
 const navbar = document.querySelector('.navbar');
