@@ -613,7 +613,8 @@ section {
     gap: 2rem;
 }
 
-.mobile-socials, .mobile-whatsapp {
+.mobile-socials,
+.mobile-whatsapp {
     display: none;
 }
 
@@ -1334,7 +1335,8 @@ section {
     font-size: 0.95rem;
 }
 
-.form-control, .glass-input {
+.form-control,
+.glass-input {
     width: 100%;
     padding: 1rem 1.2rem;
     border-radius: var(--border-radius-sm);
@@ -1493,7 +1495,7 @@ textarea.form-control {
         transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         transform: translateY(150%);
     }
-    
+
     .toast-popup.show {
         right: 20px;
         transform: translateY(0);
@@ -1562,7 +1564,7 @@ textarea.form-control {
         padding-top: 15px;
         height: calc(var(--nav-height) + 15px);
     }
-    
+
     .logo {
         position: relative;
         z-index: 1001;
@@ -1588,14 +1590,14 @@ textarea.form-control {
         justify-content: center;
         margin-bottom: 2rem;
     }
-    
+
     .mobile-socials a {
         font-size: 2rem;
         color: var(--text-main);
         transition: all var(--trans-fast);
         opacity: 0.8;
     }
-    
+
     .mobile-socials a:hover {
         color: var(--accent-cyan);
         opacity: 1;
@@ -1712,11 +1714,11 @@ textarea.form-control {
     .hero-title {
         font-size: 1.8rem;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .section-subtitle {
         font-size: 0.9rem;
     }
@@ -1729,7 +1731,7 @@ textarea.form-control {
     .project-image {
         height: 160px;
     }
-    
+
     .certificate-image {
         height: 180px;
     }
@@ -1805,7 +1807,8 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 
-    .social-links, .social-icons {
+    .social-links,
+    .social-icons {
         justify-content: center;
     }
 }
@@ -1814,9 +1817,11 @@ textarea.form-control {
     .contact-form {
         padding: 2rem;
     }
+
     .footer-content {
         text-align: center;
     }
+
     .footer-links {
         align-items: center;
     }
@@ -1884,7 +1889,8 @@ textarea.form-control {
     padding-bottom: 3rem;
 }
 
-.icon-only, .icon-only-sm {
+.icon-only,
+.icon-only-sm {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -1905,4 +1911,77 @@ textarea.form-control {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+}
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--trans-normal);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 400px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transform: translateY(20px) scale(0.95);
+    transition: all var(--trans-normal);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all var(--trans-fast);
+}
+
+.modal-close:hover {
+    background: var(--accent-pink);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.qr-container {
+    display: inline-block;
+    padding: 1rem;
+    background: #fff !important; /* Keep white so QR is scannable */
+    border-radius: var(--border-radius-md);
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
 }
