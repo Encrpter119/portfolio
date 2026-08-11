@@ -1811,6 +1811,42 @@ textarea.form-control {
     .social-icons {
         justify-content: center;
     }
+
+    /* Decrease item boxes and containers size in mobile preview */
+    .modal-content {
+        padding: 1.75rem 1.25rem !important;
+        max-width: 330px !important;
+        margin: 0 auto;
+    }
+    .modal-body h3 {
+        font-size: 1.35rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    .glass-card {
+        padding: 1.25rem !important;
+    }
+    .glass-card-inner {
+        padding: 1rem !important;
+    }
+    .stat-card {
+        padding: 1.2rem !important;
+    }
+    .detail-box {
+        padding: 1rem !important;
+    }
+    .info-card {
+        padding: 1rem !important;
+        gap: 0.75rem !important;
+    }
+    .contact-form-wrapper {
+        padding: 1.5rem 1rem !important;
+    }
+    .layout-2-col, .layout-3-col, .grid-layout {
+        gap: 1.25rem !important;
+    }
+    section {
+        padding: 2rem 0 !important;
+    }
 }
 
 @media (max-width: 768px) {
