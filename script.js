@@ -6,13 +6,26 @@
 const subscribeBtn = document.getElementById('subscribeBtn');
 const subscribeModal = document.getElementById('subscribeModal');
 const closeModalBtn = document.getElementById('closeModalBtn');
+const supportAmountInput = document.getElementById('supportAmount');
+const qrImage = document.getElementById('qrImage');
+const gpayBtn = document.getElementById('gpayBtn');
+const phonepeBtn = document.getElementById('phonepeBtn');
+
+// URN Verification Selectors
+const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+const paymentConfirmAction = document.getElementById('paymentConfirmAction');
+const urnSection = document.getElementById('urnSection');
+const urnNumber = document.getElementById('urnNumber');
+const urnSubmitBtn = document.getElementById('urnSubmitBtn');
+const urnSuccessBox = document.getElementById('urnSuccessBox');
+const savedUrnText = document.getElementById('savedUrnText');
 
 if (subscribeBtn && subscribeModal && closeModalBtn) {
     const originalSubscribeText = subscribeBtn.innerHTML;
 
     subscribeBtn.addEventListener('click', () => {
-        // Show "Generating QR..." effect on button
-        subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating QR...';
+        // Show "Generating Support..." effect on button
+        subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating Support...';
         subscribeBtn.style.pointerEvents = 'none';
         subscribeBtn.style.opacity = '0.8';
 
@@ -23,8 +36,35 @@ if (subscribeBtn && subscribeModal && closeModalBtn) {
             subscribeBtn.style.pointerEvents = 'auto';
             subscribeBtn.style.opacity = '1';
 
+            // Reset verification states on modal open
+            if (urnSection) urnSection.style.display = 'none';
+            if (urnSuccessBox) urnSuccessBox.style.display = 'none';
+            if (paymentConfirmAction) paymentConfirmAction.style.display = 'block';
+            if (urnNumber) urnNumber.value = '';
+            
+            // Restore standard modal contents visibility
+            const qrContainer = document.getElementById('qrContainer');
+            const paymentApps = document.querySelector('.payment-apps');
+            const amountInputWrapper = document.querySelector('.amount-input-wrapper');
+            const descriptionTexts = document.querySelectorAll('.modal-body > p');
+            
+            if (qrContainer) qrContainer.style.display = 'block';
+            if (paymentApps) paymentApps.style.display = 'flex';
+            if (amountInputWrapper) amountInputWrapper.style.display = 'block';
+            descriptionTexts.forEach(p => {
+                if (p.id !== 'supportModalFooterText') p.style.display = 'block';
+            });
+
             // Show the QR modal
             subscribeModal.classList.add('active');
+
+            // Focus and select the input to auto-open the keyboard on mobile
+            if (supportAmountInput) {
+                setTimeout(() => {
+                    supportAmountInput.focus();
+                    supportAmountInput.select();
+                }, 150);
+            }
         }, 600); // 600ms = 0.6 seconds, fast enough but readable
     });
 
@@ -36,6 +76,156 @@ if (subscribeBtn && subscribeModal && closeModalBtn) {
     subscribeModal.addEventListener('click', (e) => {
         if (e.target === subscribeModal) {
             subscribeModal.classList.remove('active');
+        }
+    });
+
+    // Payment Selection and URN verification handlers
+    const showVerificationFlow = () => {
+        if (urnSection) {
+            urnSection.style.display = 'block';
+            setTimeout(() => {
+                urnSection.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                if (urnNumber) urnNumber.focus();
+            }, 100);
+        }
+        if (paymentConfirmAction) paymentConfirmAction.style.display = 'none';
+    };
+
+    if (confirmPaymentBtn) confirmPaymentBtn.addEventListener('click', showVerificationFlow);
+    if (gpayBtn) gpayBtn.addEventListener('click', showVerificationFlow);
+    if (phonepeBtn) phonepeBtn.addEventListener('click', showVerificationFlow);
+
+    // Enforce numbers-only and limit length to 12 digits during input
+    if (urnNumber) {
+        urnNumber.addEventListener('input', () => {
+            urnNumber.value = urnNumber.value.replace(/\D/g, '').slice(0, 12);
+        });
+    }
+
+    // Submit URN and save successfully
+    if (urnSubmitBtn && urnNumber && urnSuccessBox && savedUrnText) {
+        urnSubmitBtn.addEventListener('click', () => {
+            const urnValue = urnNumber.value.trim();
+            // Validate that reference ID is exactly 12 digits
+            if (!/^\d{12}$/.test(urnValue)) {
+                urnNumber.style.borderColor = '#ff4a5a';
+                urnNumber.value = '';
+                urnNumber.placeholder = 'URN must be exactly 12 digits!';
+                setTimeout(() => {
+                    urnNumber.style.borderColor = 'rgba(0, 242, 254, 0.2)';
+                    urnNumber.placeholder = '12-digit reference ID';
+                }, 2000);
+                return;
+            }
+
+            // Save URN transaction reference to localStorage
+            const verificationRecord = {
+                urn: urnValue,
+                amount: supportAmountInput ? supportAmountInput.value : '1.99',
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('urn_payment_verification', JSON.stringify(verificationRecord));
+
+            // Hide standard payment contents
+            const qrContainer = document.getElementById('qrContainer');
+            const paymentApps = document.querySelector('.payment-apps');
+            const amountInputWrapper = document.querySelector('.amount-input-wrapper');
+            const descriptionTexts = document.querySelectorAll('.modal-body > p');
+            
+            if (qrContainer) qrContainer.style.display = 'none';
+            if (paymentApps) paymentApps.style.display = 'none';
+            if (amountInputWrapper) amountInputWrapper.style.display = 'none';
+            descriptionTexts.forEach(p => {
+                if (p.id !== 'supportModalFooterText') p.style.display = 'none';
+            });
+            if (urnSection) urnSection.style.display = 'none';
+
+            // Show URN verification success
+            savedUrnText.textContent = urnValue;
+            urnSuccessBox.style.display = 'block';
+        });
+    }
+}
+
+// Live update of UPI QR code and payment apps based on amount input
+if (supportAmountInput && qrImage && gpayBtn && phonepeBtn) {
+    const updateUPIElements = () => {
+        // Keep only numbers and at most one decimal point
+        let cleanVal = supportAmountInput.value.replace(/[^0-9.]/g, '');
+        const dots = cleanVal.split('.');
+        if (dots.length > 2) {
+            cleanVal = dots[0] + '.' + dots.slice(1).join('');
+        }
+        
+        let numVal = parseFloat(cleanVal);
+        const errorMsg = document.getElementById('amountError');
+
+        if (!isNaN(numVal)) {
+            if (numVal > 500) {
+                numVal = 500;
+                cleanVal = '500';
+                if (errorMsg) {
+                    errorMsg.textContent = 'Maximum support amount is ₹500';
+                    errorMsg.style.display = 'block';
+                }
+            } else if (numVal < 1) {
+                if (errorMsg) {
+                    errorMsg.textContent = 'Minimum support amount is ₹1';
+                    errorMsg.style.display = 'block';
+                }
+            } else {
+                if (errorMsg) {
+                    errorMsg.style.display = 'none';
+                }
+            }
+        } else {
+            numVal = 0;
+            if (errorMsg) {
+                errorMsg.textContent = 'Minimum support amount is ₹1';
+                errorMsg.style.display = 'block';
+            }
+        }
+        
+        supportAmountInput.value = cleanVal;
+        
+        // Build the UPI link (VPA: 7006780939-2@ybl)
+        let upiLink = 'upi://pay?pa=7006780939-2@ybl&pn=M%20Suhaib&cu=INR';
+        
+        // Enforce boundary in generated payment link
+        let amtStr = '1.99';
+        if (!isNaN(numVal)) {
+            const clamped = Math.max(1, Math.min(500, numVal));
+            if (clamped !== numVal) {
+                amtStr = clamped.toString();
+            } else {
+                amtStr = cleanVal;
+            }
+        }
+        upiLink += `&am=${amtStr}`;
+        
+        // Generate QR code using the qrserver API
+        const encodedData = encodeURIComponent(upiLink);
+        qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodedData}`;
+        
+        // Update deep-link buttons
+        gpayBtn.href = upiLink;
+        phonepeBtn.href = upiLink;
+    };
+
+    supportAmountInput.addEventListener('input', updateUPIElements);
+
+    // Enforce valid minimum on input blur
+    supportAmountInput.addEventListener('blur', () => {
+        let cleanVal = supportAmountInput.value.replace(/[^0-9.]/g, '');
+        let numVal = parseFloat(cleanVal);
+        const errorMsg = document.getElementById('amountError');
+        
+        if (isNaN(numVal) || numVal < 1) {
+            supportAmountInput.value = '1.99';
+            if (errorMsg) {
+                errorMsg.style.display = 'none';
+            }
+            updateUPIElements();
         }
     });
 }
