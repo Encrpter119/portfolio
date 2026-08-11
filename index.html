@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHN1XECKPY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PHN1XECKPY');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -23,9 +14,8 @@
 
     <title>M SUHAIB - Portfolio | BCA Student & Frontend Developer</title>
 
-    <!-- Favicon code simplified for now to ensure no JSON escaping issues -->
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='60' font-size='45' font-weight='bold' text-anchor='middle' fill='%2300f2fe' font-family='Arial'>MS</text></svg>">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,10 +29,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5218575806475961"
-     crossorigin="anonymous"></script>
 </head>
-   
 
 <body class="dark-mode">
 
@@ -66,7 +53,7 @@
 
             <div class="nav-menu" id="navMenu">
                 <div class="mobile-socials">
-                    <a href="https://www.instagram.com/official_suhaib119?igsh=MWQycmducjdlenZoNw=="
+                    <a href="https://www.instagram.com/suhaib.x7?igsh=M3g3aHNtamtkM2Z2"
                         aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.facebook.com/share/1Dp9Vjfvf9/" aria-label="Facebook" target="_blank"><i
                             class="fab fa-facebook"></i></a>
@@ -81,10 +68,11 @@
                 <a href="#about" class="nav-link" data-section="about">About</a>
                 <a href="#projects" class="nav-link" data-section="projects">Projects</a>
                 <a href="#certificates" class="nav-link" data-section="certificates">Certificates</a>
+                <a href="https://example.com" class="nav-link" target="_blank">Insurance Services</a>
                 <a href="#contact" class="nav-link" data-section="contact">Contact</a>
 
-                <button class="btn btn-primary btn-small glow-effect" id="subscribeBtn" aria-label="Other">
-                    <i class="fas fa-qrcode"></i> Other
+                <button class="btn btn-primary btn-small glow-effect" id="subscribeBtn" aria-label="Support">
+                    <i class="fas fa-qrcode"></i> Support
                 </button>
 
                 <div class="mobile-whatsapp">
@@ -376,6 +364,48 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card glass-card hover-lift">
+                        <div class="project-image">
+                            <img src="upi_referral.png" alt="UPI Referral Program">
+                            <div class="project-overlay glass-panel">
+                                <a href="https://upiworking.vercel.app/"
+                                    class="project-link btn btn-primary glow-effect rounded-circle" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title gradient-text">UPI Referral & Link Manager</h3>
+                            <p class="project-description">
+                                An interactive portal to generate UPI payment deep links, dynamic referral QR codes, simulate reward claims, and scratch cards with real-time analytics.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag glass-tag">HTML5</span>
+                                <span class="tech-tag glass-tag">CSS3</span>
+                                <span class="tech-tag glass-tag">JavaScript</span>
+                                <span class="tech-tag glass-tag">Canvas API</span>
+                                <span class="tech-tag glass-tag">UPI Links</span>
+                            </div>
+                            <div class="project-buttons mt-4 flex-gap">
+                                <a href="https://upiworking.vercel.app/"
+                                    class="btn btn-small btn-primary glow-effect flex-grow" target="_blank">
+                                    <i class="fas fa-globe"></i> Visit Now
+                                </a>
+                                <a href="#" class="btn btn-small btn-secondary glass-btn flex-grow">
+                                    <i class="fas fa-code"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View All Projects Button -->
+                <div class="text-center margin-top-lg">
+                    <a href="projects.html" class="btn btn-primary glow-effect">
+                        <i class="fas fa-folder-open"></i> View All Projects
+                    </a>
                 </div>
             </div>
         </section>
@@ -576,7 +606,7 @@
                             <a href="https://www.facebook.com/share/1Dp9Vjfvf9/" aria-label="Facebook"
                                 class="glass-btn icon-only hover-glow" target="_blank"><i
                                     class="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/official_suhaib119?igsh=MWQycmducjdlenZoNw=="
+                            <a href="https://www.instagram.com/suhaib.x7?igsh=M3g3aHNtamtkM2Z2"
                                 aria-label="Instagram" class="glass-btn icon-only hover-glow" target="_blank"><i
                                     class="fab fa-instagram"></i></a>
                         </div>
@@ -639,8 +669,8 @@
                                     class="fas fa-chevron-right text-accent text-xs"></i> Home</a></li>
                         <li><a href="#projects" class="hover-link text-sm"><i
                                     class="fas fa-chevron-right text-accent text-xs"></i> Projects</a></li>
-                        <li><a href="#skills" class="hover-link text-sm"><i
-                                    class="fas fa-chevron-right text-accent text-xs"></i> Skills</a></li>
+                        <li><a href="https://example.com" class="hover-link text-sm" target="_blank"><i
+                                    class="fas fa-chevron-right text-accent text-xs"></i> Insurance Services</a></li>
                         <li><a href="#contact" class="hover-link text-sm"><i
                                     class="fas fa-chevron-right text-accent text-xs"></i> Contact</a></li>
                     </ul>
@@ -659,7 +689,7 @@
                         <a href="https://www.facebook.com/share/1Dp9Vjfvf9/" aria-label="Facebook"
                             class="glass-btn icon-only-sm hover-glow" target="_blank"><i
                                 class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/official_suhaib119?igsh=MWQycmducjdlenZoNw=="
+                        <a href="https://www.instagram.com/suhaib.x7?igsh=M3g3aHNtamtkM2Z2"
                             aria-label="Instagram" class="glass-btn icon-only-sm hover-glow" target="_blank"><i
                                 class="fab fa-instagram"></i></a>
                     </div>
@@ -686,23 +716,62 @@
             </button>
             <div class="modal-body text-center">
                 <h3 class="gradient-text margin-bottom-sm">Support & Subscribe</h3>
-                <p class="text-sm text-muted margin-bottom-lg">Scan the QR code below to subscribe directly via your Bank Account.</p>
-                <div class="qr-container glass-card-inner highlight-border margin-bottom-md">
-                    <!-- Dynamic UPI QR generated for 7006780939-2@ybl with Rs. 99 preset -->
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3D7006780939-2%40ybl%26pn%3DM%20Suhaib%26am%3D99.00%26cu%3DINR" alt="Bank Account QR Code" class="qr-image">
+                <p class="text-sm text-muted margin-bottom-md">Enter support amount and scan the QR code to proceed.</p>
+                
+                <!-- Dynamic Amount Input with Decimal/Numeric Keyboard -->
+                <div class="amount-input-wrapper" style="margin-bottom: 1.25rem;">
+                    <label for="supportAmount" class="text-xs text-muted" style="display: block; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Support Amount (₹)</label>
+                    <input type="text" id="supportAmount" class="glass-input text-center" inputmode="decimal" placeholder="Enter amount" value="1.99" style="font-size: 1.5rem; font-weight: bold; width: 100%; max-width: 220px; margin: 0 auto; display: block; border-radius: 12px; padding: 0.5rem 1rem; color: #00f2fe; border: 1px solid rgba(0, 242, 254, 0.3); background: rgba(10, 10, 15, 0.5);">
+                    <p id="amountError" class="text-xs" style="color: #ff4a5a; margin-top: 0.5rem; display: none; font-weight: 500;"></p>
+                </div>
+
+                <!-- Centered QR Box -->
+                <div id="qrContainer" style="display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
+                    <div style="background: #ffffff; padding: 0.75rem; border-radius: 16px; display: inline-flex; box-shadow: 0 8px 24px rgba(0,0,0,0.25); border: 2px solid rgba(0, 242, 254, 0.35);">
+                        <img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3D7006780939-2%40ybl%26pn%3DM%20Suhaib%26am%3D1.99%26cu%3DINR" alt="Bank Account QR Code" style="display: block; width: 150px; height: 150px; object-fit: contain;">
+                    </div>
                 </div>
                 
                 <p class="text-xs text-muted margin-bottom-sm">Or tap below to open app directly (Mobile only)</p>
-                <div class="payment-apps flex-center margin-bottom-md" style="gap: 1rem; display: flex; justify-content: center;">
-                    <a href="upi://pay?pa=7006780939-2@ybl&pn=M%20Suhaib&am=99.00&cu=INR" class="btn btn-small hover-lift" style="background: #ffffff; color: #3c4043; border-radius: 8px; padding: 0.5rem 1.2rem; display: flex; align-items: center;">
+                <div class="payment-apps flex-center margin-bottom-md" style="gap: 1rem; display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                    <a id="gpayBtn" href="upi://pay?pa=7006780939-2@ybl&pn=M%20Suhaib&am=1.99&cu=INR" class="btn btn-small hover-lift" style="background: #ffffff; color: #3c4043; border-radius: 8px; padding: 0.5rem 1.2rem; display: flex; align-items: center;">
                         <i class="fab fa-google-pay" style="font-size: 1.5rem;"></i>
                     </a>
-                    <a href="upi://pay?pa=7006780939-2@ybl&pn=M%20Suhaib&am=99.00&cu=INR" class="btn btn-small hover-lift" style="background: #5f259f; color: #ffffff; border-radius: 8px; padding: 0.5rem 1.2rem; display: flex; align-items: center; font-weight: 800; font-family: sans-serif;">
+                    <a id="phonepeBtn" href="upi://pay?pa=7006780939-2@ybl&pn=M%20Suhaib&am=1.99&cu=INR" class="btn btn-small hover-lift" style="background: #5f259f; color: #ffffff; border-radius: 8px; padding: 0.5rem 1.2rem; display: flex; align-items: center; font-weight: 800; font-family: sans-serif;">
                         पे PhonePe
                     </a>
                 </div>
 
-                <p class="text-xs text-muted">Thank you for your support! ❤️</p>
+                <!-- Payment Confirmation Action -->
+                <div id="paymentConfirmAction" class="margin-bottom-md" style="margin-top: 1.5rem;">
+                    <button id="confirmPaymentBtn" class="btn btn-small glass-btn hover-glow" style="border-radius: 8px; font-size: 0.85rem; padding: 0.6rem 1.2rem; width: 100%; max-width: 260px; margin: 0 auto; display: block;">
+                        <i class="fas fa-receipt"></i> Click to Verify Transaction
+                    </button>
+                </div>
+
+                <!-- Transaction Status Verification (URN Input Box directly opens) -->
+                <div id="urnSection" style="display: none; border-top: 1px solid var(--glass-border); padding-top: 1.25rem; margin-top: 1rem;">
+                    <div id="urnInputBox">
+                        <label for="urnNumber" class="text-xs text-muted" style="display: block; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Enter Transaction URN / UTR Reference</label>
+                        <input type="text" id="urnNumber" class="glass-input text-center" inputmode="numeric" maxlength="12" placeholder="12-digit reference ID" style="width: 100%; max-width: 280px; margin: 0 auto 1.25rem auto; display: block; border-radius: 12px; font-size: 1.2rem; font-weight: 600; color: var(--accent-cyan); border: 1px solid var(--glass-border-light); background: rgba(10, 10, 15, 0.5); padding: 0.75rem 1rem;">
+                        <button id="urnSubmitBtn" class="btn btn-small btn-primary glow-effect" style="width: 100%; max-width: 180px; margin: 0 auto; display: block; border-radius: 100px;">
+                            Submit Reference
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Verification Success Box -->
+                <div id="urnSuccessBox" class="glass-card-inner" style="display: none; background: rgba(0, 242, 96, 0.04); border: 1px solid var(--accent-green); border-radius: 16px; padding: 2rem 1.5rem; margin-top: 1rem;">
+                    <div style="font-size: 3rem; color: var(--accent-green); margin-bottom: 1rem;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4 class="gradient-text-alt" style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0.5rem;">Payment Submitted!</h4>
+                    <p class="text-sm text-muted" style="margin-bottom: 0; line-height: 1.6;">
+                        Your reference URN <strong id="savedUrnText" style="color: var(--accent-cyan); font-family: var(--font-secondary);"></strong> has been saved successfully. I will verify it shortly. Thank you!
+                    </p>
+                </div>
+
+                <p class="text-xs text-muted" id="supportModalFooterText">Thank you for your support! ❤️</p>
             </div>
         </div>
     </div>
